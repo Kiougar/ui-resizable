@@ -1,0 +1,60 @@
+/* Resizable element must have position attribute
+   specified for correct handle positions */
+.ui-resizable {
+  position: relative;
+}
+
+/* Handle default style */
+.ui-resizable-handle {
+  position: absolute;
+  font-size: 1px;
+  display: block;
+  border-style: dotted;
+  border-color: #aaa;
+  border-width: 0;
+}
+
+/* Resizing styles */
+.ui-resizing-e, .ui-resizing-w    { cursor: e-resize; }
+.ui-resizing-s, .ui-resizing-n    { cursor: s-resize; }
+.ui-resizing-se, .ui-resizing-nw  { cursor: se-resize; }
+.ui-resizing-sw, .ui-resizing-ne  { cursor: sw-resize; }
+.ui-resizing .ui-resizable-handle { display: none; }
+
+/* Disable borders when resizing or showBorders is false */
+.handle-s.no-border, 
+.handle-w.no-border, 
+.handle-e.no-border, 
+.handle-n.no-border { 
+  border-width: 0;
+}
+
+/* Handle position styles */
+.handle-n, .handle-s { cursor: n-resize; height: 12px; left: 0px; right: 0px; }
+.handle-w, .handle-e { cursor: w-resize; width: 12px; top: 0px; bottom: 0px; }
+.handle-n { top:    -1px; }
+.handle-s { bottom: -1px; }
+.handle-w { left:   -1px; }
+.handle-e { right:  -1px; }
+
+.handle-sw { cursor: sw-resize; left: -1px; bottom: -1px; }
+.handle-se { cursor: se-resize; right: -1px; bottom: -1px; }
+.handle-nw { cursor: nw-resize; top: -1px; left: -1px; }
+.handle-ne { cursor: ne-resize; top: -1px; right: -1px; }
+
+.handle-sw, .handle-se, 
+.handle-nw, .handle-ne { 
+  border-right-color: transparent;
+  border-left-color: transparent;
+}
+
+/* Show borders on hover */
+.ui-resizable:hover > .handle-n { border-top-width:    2px; }
+.ui-resizable:hover > .handle-s { border-bottom-width: 2px; }
+.ui-resizable:hover > .handle-w { border-left-width:   2px; }
+.ui-resizable:hover > .handle-e { border-right-width:  2px; }
+
+.ui-resizable:hover > .handle-sw { border-width:0 13px 13px 0; }
+.ui-resizable:hover > .handle-se { border-width:0 0 13px 13px; }
+.ui-resizable:hover > .handle-nw { border-width:13px 13px 0 0; }
+.ui-resizable:hover > .handle-ne { border-width:13px 0 0 13px; }
